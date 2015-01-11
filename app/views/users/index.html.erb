@@ -1,1 +1,17 @@
 <h1>This is the users index</h1>
+
+
+<h2>Users</h2>
+
+<%= link_to "New user!", new_user_path %>
+
+
+<ul>
+	<% @users.each do |u| %>
+		<li><%= u.first_name %> <%= u.last_name %> <%= u.email %>
+			<ul>
+				
+			</ul>
+		</li>
+	<% end %>
+</ul>
