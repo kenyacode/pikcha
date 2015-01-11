@@ -1,1 +1,14 @@
 <h1>This is the User's show</h1>
+
+<h2>User<%= u.first_name %> <%= u.last_name %> </h2>
+
+<%= link_to "Edit user!", edit_user_path %>
+
+<ul>
+	<ul>
+		<li> <%= u.first_name %> </li>
+		<li> <%= u.last_name %> </li>
+		<li> <%= u.email %></li>
+	</ul>
+<% end %>
+</ul>
