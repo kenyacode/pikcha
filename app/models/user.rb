@@ -4,7 +4,7 @@ class User
   field :last_name, type: String
   field :email, type: String
 
-	#mount_uploader :image, AvatarUploader
+	mount_uploader :image, AvatarUploader
 
   # def password=(unencrypted_password)
   # 	self.password_digest = BCrypt::Password.create(unencrypted_password)
