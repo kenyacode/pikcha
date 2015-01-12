@@ -5,6 +5,7 @@ class User
   field :email, type: String
 
 	mount_uploader :image, AvatarUploader
+  field :remove_image
 
   # def password=(unencrypted_password)
   # 	self.password_digest = BCrypt::Password.create(unencrypted_password)

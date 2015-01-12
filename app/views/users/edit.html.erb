@@ -1,1 +1,38 @@
 <h1>This is the User's edit</h1>
+
+<div class="container-fluid content-body">
+	<div class="center">
+	<h1>Sign up</h1>
+		<div class="col-md-12" id="user-form">
+			<div class="center">
+				<div class="form-group col-md-4">
+					<%= form_for @user do |f| %>
+						<div>
+							<%= image_tag @user.image.url(:thumb) %>
+						</div>
+						<div>
+							<%= f.label :first_name %>
+							<%= f.text_field :first_name, :value => @user.first_name %>
+						</div>
+						<div>
+							<%= f.label :last_name %>
+							<%= f.text_field :last_name, :value => @user.last_name %>
+						</div>
+						<div>
+							<%= f.label :email %>
+							<%= f.text_field :email, :value => @user.email %>
+						</div>
+						
+						<div>
+							<%= f.label :image %>
+							<%= f.file_field :image %>
+						</div>
+						<div>
+							<%= f.submit %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
