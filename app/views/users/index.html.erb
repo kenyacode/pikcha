@@ -8,7 +8,9 @@
 
 <ul>
 	<% @users.each do |u| %>
-		<li><%= u.first_name %> <%= u.last_name %> <%= u.email %> <%= link_to "Edit user!", edit_user_path(:id) %>
+		<li><%= u.first_name %> <%= u.last_name %> <%= u.email %> 
+		<%= link_to "Edit user!", edit_user_path(u) %> 
+		<%= link_to "Destroy user!", user_path(u), method: :delete %>
 			<ul>
 				<%= image_tag u.image.url(:thumb) %>
 			</ul>
