@@ -10,7 +10,7 @@
 	<% @users.each do |u| %>
 		<li><%= u.first_name %> <%= u.last_name %> <%= u.email %> <%= link_to "Edit user!", edit_user_path(:id) %>
 			<ul>
-				
+				<%= image_tag u.image.url %>
 			</ul>
 		</li>
 	<% end %>
