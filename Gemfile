@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+
+# Picture gems
+gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'mini_magick'		# for post-upload processing
+
 gem 'mongoid'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'

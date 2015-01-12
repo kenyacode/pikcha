@@ -2,13 +2,10 @@
 
 <h2>User<%= u.first_name %> <%= u.last_name %> </h2>
 
-<%= link_to "Edit user!", edit_user_path %>
-
 <ul>
-	<ul>
+	<%= link_to "Edit user!", edit_user_path %>
 		<li> <%= u.first_name %> </li>
 		<li> <%= u.last_name %> </li>
 		<li> <%= u.email %></li>
-	</ul>
-<% end %>
+	<% end %>
 </ul>
