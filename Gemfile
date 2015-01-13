@@ -44,6 +44,10 @@ gem 'thin', group: :production
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.9'
 
+# Secure your secret keys on Rails.
+# Prevents them from being uploaded to Github.
+gem 'figaro'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
