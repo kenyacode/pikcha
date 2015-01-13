@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 # Picture gems
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+# Fog allows to call an image back from Amazon S3
+gem 'fog'
 gem 'mini_magick'		# for post-upload processing
 
 gem 'mongoid', '~> 4.0.0'
@@ -47,6 +49,7 @@ gem 'thin', group: :production
 # Secure your secret keys on Rails.
 # Prevents them from being uploaded to Github.
 gem 'figaro'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
