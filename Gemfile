@@ -36,10 +36,10 @@ gem 'quiet_assets'
 gem 'rails_12factor', group: :production
 
 # Specifty what version of Ruby for Production on Heroku
-gem 'ruby' '2.1.3'
+'ruby' '2.1.3'
 
 # Development server. Faster and better at handling a lot of users at once.
-gem 'thin', group :production
+gem 'thin', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
