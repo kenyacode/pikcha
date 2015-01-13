@@ -42,7 +42,7 @@ ruby '2.1.3'
 gem 'thin', group: :production
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+ gem 'bcrypt', '~> 3.1.9'
 
 # Use unicorn as the app server
 # gem 'unicorn'
