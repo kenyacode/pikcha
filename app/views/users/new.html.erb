@@ -7,17 +7,30 @@
 			<div class="center">
 				<div class="form-group col-md-4">
 					<%= form_for(@user, :html => {:multipart => true}) do |f| %>
-
-					<%= f.text_field :first_name, placeholder: "first name",class: "form-control" %>
-
-					<%= f.text_field :last_name, placeholder: "last name", class: "form-control" %>
-
-					<%= f.text_field :email, placeholder: "email", class: "form-control" %> <%= @user.errors.messages[:email].join(", ") %><br>
+					<div>
+						<%= f.label :first_name %>
+						<%= f.text_field :first_name, placeholder: "first name",class: "form-control" %>
+					</div>
 					
+					<div>
+						<%= f.label :last_name %>
+						<%= f.text_field :last_name, placeholder: "last name", class: "form-control" %>
+					</div>
 
-					<%= f.file_field :image, placeholder: "Add Image" %>
+					<div>
+						<%= f.label :email %>
+						<%= f.text_field :email, placeholder: "email", class: "form-control" %> <%= @user.errors.messages[:email].join(", ") %>
+					</div>
+					
+					<div>
+						<%= f.label :password %>
+						<%= f.password_field :password %>
+					</div>
 
-					<%= f.submit "Create new user!", class: "btn btn-primary button-blue" %>
+					<div>
+						<%= f.file_field :image, placeholder: "Add Image" %>
+						<%= f.submit "Create new user!", class: "btn btn-primary button-blue" %>
+					</div>
 					<% end %>
 				</div>
 			</div>
