@@ -5,7 +5,7 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version -'4.0.0'
 
 * System dependencies
 
@@ -26,3 +26,83 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+Pikcha workflow
+
+rails new picture_app --skip-active-record
+cd picture_app
+subl .
+gemfile add mongoid
+bundle
+git init
+git commit
+Start working on CRUD
+create a model rails 			g model <name> git commit
+create a controller rails g controller <name> git commit
+create routes resources :users git commit
+root 'user#index' git commit
+create .yml file - rails g mongoid:config
+create index view - new file in views/users called index.html.erb
+		- name convention match the CRUD git commit
+		- make test (to see what page i'm on)
+		- <h1>This is the users index</h1>
+browser will show localhost:3000
+	In order to see your user after you create it, you must write the
+	CRUD methods in your controller. index, show, new, create with the private method user_params
+		class UsersController < ApplicationController
+			def index
+				@users = User.all 
+			end
+
+			def show
+				@user = User.find(params[:id])
+			end
+
+			def new
+				@user = User.new
+			end
+
+			def create
+				@user = User.new(user_params)
+				if @user.save
+					redirect_to users_path
+				else
+					render :new
+				end
+			end
+
+			def edit
+
+			end
+
+			def destroy
+				@user = User.destroy
+			end
+
+			private
+
+				def user_params
+					params.require(:user).permit(:email, :first_name, :last_name)
+				end
+		end
+
+At this point you are able to create new users and save them to the Mongoid
+database.  You can see the database using genghisapp
+
+create show view - new file in views/users called show.html.erb
+									- name convention match the CRUD git commit
+									- make test (to see what page i'm on)
+									- <h1>This is the User's show</h1>
+http://localhost:3000/users/54b046fb535349095d000000(user object id)/
+
+create new view - new file in views/users called new.html.erb
+									- name convention match the CRUD git commit
+									- make test (to see what page i'm on)
+									- <h1>This is the User's new</h1>
+http://localhost:3000/users/new
+
+create edit view - new file in views/users called edit.html.erb
+									- name convention match the CRUD git commit
+									- make test (to see what page i'm on)
+									<h1>This is the User's edit</h1>
+http://localhost:3000/users/54b046fb535349095d000000(user object id)/edit
