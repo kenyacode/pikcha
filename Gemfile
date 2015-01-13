@@ -35,6 +35,9 @@ gem 'quiet_assets'
 # Production Heroku gem to get your assets working automatically on their system.
 gem 'rails_12factor', group: :production
 
+# Specifty what version of Ruby for Production on Heroku
+gem 'ruby' '2.1.3'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
