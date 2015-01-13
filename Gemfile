@@ -6,7 +6,7 @@ gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'mini_magick'		# for post-upload processing
 
-gem 'mongoid'
+gem 'mongoid', '~> 4.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use SCSS for stylesheets
