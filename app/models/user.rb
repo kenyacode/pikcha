@@ -4,6 +4,7 @@ class User
   field :last_name, type: String
   field :email, type: String
   attr_reader :password
+  field :password_digest, type: String
 
 	mount_uploader :image, AvatarUploader
   field :remove_image
