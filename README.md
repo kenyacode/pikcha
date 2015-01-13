@@ -1,2 +1,0 @@
-# pikcha
-picture_app
