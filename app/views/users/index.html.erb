@@ -1,3 +1,5 @@
+
+
 <h1>This is the users index</h1>
 
 
@@ -9,10 +11,12 @@
 <ul>
 	<% @users.each do |u| %>
 		<li><%= u.first_name %> <%= u.last_name %> <%= u.email %> 
-		<%= link_to "Edit user!", edit_user_path(u) %> 
-		<%= link_to "Destroy user!", user_path(u), method: :delete %>
+				<%= link_to "Edit user!", edit_user_path(u) %> 
+				<%= link_to "Destroy user!", user_path(u), method: :delete %>
 			<ul>
-				<%= image_tag u.image.url(:thumb) %>
+				<li>
+					<%= image_tag u.image.url(:thumb) %>
+				</li>
 			</ul>
 		</li>
 	<% end %>
