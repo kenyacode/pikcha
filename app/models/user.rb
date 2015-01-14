@@ -9,6 +9,11 @@ class User
 	mount_uploader :image, AvatarUploader
   field :remove_image
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true
+  validates :password_digest, presence: true
+
    def password=(unencrypted_password)
     unless unencrypted_password.empty?
       # keep the unencrypted password in memory for a second
