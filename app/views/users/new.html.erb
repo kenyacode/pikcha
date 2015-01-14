@@ -16,9 +16,18 @@
 				<%= f.password_field :password, placeholder: "password", class: "form-control" %>
 			</div>
 			<div>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+    	</div>
+			<div>
 				<%= f.file_field :image %>
 				<%= f.submit "Create a new user!", class: "btn btn-primary button-blue" %>
 			</div>
+			<div class="col-md-4">
+		    <% @user.errors.full_messages.each do |msg| %>
+		     <%= msg %>
+		    <% end %>
+	    </div>
 			<% end %>
 		</div> <!-- form-group -->
 	</div> <!-- row -->
