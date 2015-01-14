@@ -1,7 +1,11 @@
 <div class="container-fluid content-body">
-	<div class="center">
-	<h1>Sign up</h1>
-		<div class="col-md-12" id="user-form">
+	<div class="col-sm-6">
+	<h1>picha</h1>
+	<h3>Sign up</h3>
+	<div>
+		<%= link_to "Login!", login_path %>
+	</div>
+		<div class="col-md-8 " id="user-form">
 			<div class="center">
 				<div class="form-group col-md-4">
 					<%= form_for(@user, :html => {:multipart => true}) do |f| %>
