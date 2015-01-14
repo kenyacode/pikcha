@@ -1,10 +1,49 @@
 <div class="container-fluid content-body">
+<<<<<<< HEAD
 	<div class="row">
 		<div class="form-group col-md-4 col-md-offset-4 text-center">
 			<h1 class="col-md-4 col-md-offset-4">Sign up</h1>
 			<%= form_for(@user, :html => {:multipart => true}) do |f| %>
 			<div>
 				<%= f.text_field :first_name, placeholder: "first name",class: "form-control" %>
+=======
+	<div class="col-sm-6">
+	<h1>picha</h1>
+	<h3>Sign up</h3>
+	<div>
+		<%= link_to "Login!", login_path %>
+	</div>
+		<div class="col-md-8 " id="user-form">
+			<div class="center">
+				<div class="form-group col-md-4">
+					<%= form_for(@user, :html => {:multipart => true}) do |f| %>
+					<div>
+						<%= f.label :first_name %>
+						<%= f.text_field :first_name, placeholder: "first name",class: "form-control" %>
+					</div>
+					
+					<div>
+						<%= f.label :last_name %>
+						<%= f.text_field :last_name, placeholder: "last name", class: "form-control" %>
+					</div>
+
+					<div>
+						<%= f.label :email %>
+						<%= f.text_field :email, placeholder: "email", class: "form-control" %> <%= @user.errors.messages[:email].join(", ") %>
+					</div>
+					
+					<div>
+						<%= f.label :password %>
+						<%= f.password_field :password %>
+					</div>
+
+					<div>
+						<%= f.file_field :image, placeholder: "Add Image" %>
+						<%= f.submit "Create new user!", class: "btn btn-primary button-blue" %>
+					</div>
+					<% end %>
+				</div>
+>>>>>>> old-state
 			</div>
 			<div>
 				<%= f.text_field :last_name, placeholder: "last name", class: "form-control" %>

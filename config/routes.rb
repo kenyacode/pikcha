@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   resources :users
 
-  root 'users#new'
+
+  root 'sessions#new'
   get '/signup' => 'users#new'
 
   # routes for sessions controller
