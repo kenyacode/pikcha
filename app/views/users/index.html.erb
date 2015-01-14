@@ -1,18 +1,30 @@
-<h2>Users</h2>
+<div class="container-fluid content-body">
+	<div class="row">
+		<div class="form-group text-center">
 
-<%= link_to "New user!", new_user_path %>
+			<%= link_to "New user!", new_user_path %>
+				<% @users.each do |u| %>
+
+				<div>
+					<%= image_tag u.image.url(:thumb) %>	
+				</div>
 
 
-<ul>
-	<% @users.each do |u| %>
-		<li><%= u.first_name %> <%= u.last_name %> <%= u.email %> 
-				<%= link_to "Edit user!", edit_user_path(u) %> 
-				<%= link_to "Destroy user!", user_path(u), method: :delete %>
-			<ul>
-				<li>
-					<%= image_tag u.image.url(:thumb) %>
-				</li>
-			</ul>
-		</li>
-	<% end %>
-</ul>
+				<div>
+					<%= u.first_name %> <%= u.last_name %>
+				</div>
+
+
+				<div>
+					<%= u.email %> 
+				</div>
+
+
+				<div>
+					<%= link_to "Edit user!", edit_user_path(u) %> 
+					<%= link_to "Delete user!", user_path(u), method: :delete %>
+				</div>		
+				<% end %>
+		</div> <!-- form-group -->
+	</div> <!-- row -->
+</div> <!-- container-fluid -->
