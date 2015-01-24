@@ -7,11 +7,12 @@ class SessionsController < ApplicationController
 			session[:user_id] = user.id.to_s
 			redirect_to users_path
 		else
+			#flash[:fail] = "Your log in failed"
 			redirect_to login_path
 		end
 	end
 	def destroy
 		session.delete(:user_id)
-		redirect_to users_path
+		redirect_to login_path
 	end
 end
