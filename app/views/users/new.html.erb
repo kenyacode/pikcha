@@ -1,40 +1,40 @@
-<div class="container-fluid content-body">
-	<h1>picha</h1>
-	<h3>Sign up</h3>
-	<div>
-		<%= link_to "Login!", login_path %>
-	</div>
-	
-	<div class="row">
-		<div class="form-group col-md-4">
-					<div>
-						<%= form_for(@user, :html => {:multipart => true}) do |f| %>
-					</div>
-					<div>
-							<%= f.label :first_name %>
-							<%= f.text_field :first_name, placeholder: "first name",class: "form-control" %>
-					</div>
-					
-					<div>
-						<%= f.label :last_name %>
-						<%= f.text_field :last_name, placeholder: "last name", class: "form-control" %>
-					</div>
+<!-- shared navigation -->
 
-					<div>
-						<%= f.label :email %>
-						<%= f.text_field :email, placeholder: "email", class: "form-control" %> <%= @user.errors.messages[:email].join(", ") %>
-					</div>
-					
-					<div>
-						<%= f.label :password %>
-						<%= f.password_field :password %>
-					</div>
 
-					<div>
-						<%= f.file_field :image, placeholder: "Add Image" %>
-						<%= f.submit "Create new user!", class: "btn btn-primary button-blue" %>
-					</div>
-					<% end %>
-		</div> <!-- form-group -->
-	</div> <!-- row -->
-</div> <!-- container-fluid -->
+<div class="jumbotron">
+	<div class="edit-user">
+		<h2>Create an account!</h2>
+			<!-- form for edit user -->
+		<%= form_for @user do |f| %>
+			<div>
+				<%= f.label :first_name %>
+				<%= f.text_field :first_name %>
+			</div>
+			<div>
+				<%= f.label :last_name %>
+				<%= f.text_field :last_name %>
+			</div>
+			<div>
+				<%= f.label :email %>
+				<%= f.text_field :email %>
+			</div>
+			<div>
+				<%= f.label :password %>
+				<%= f.password_field :password %>
+			</div>	
+			<div>
+				<%= f.label :password_confirmation %>
+				<%= f.password_field :password_confirmation %>
+			</div>
+			<div>
+				<%= image_tag @user.image.url(:thumb) %>
+			</div>
+			<div>
+				<%= f.file_field :image %>
+			</div>
+			<div>
+				<%= f.submit "Upload" %>
+			</div>
+		<% end %>
+	</div> <!-- edit-user -->
+</div> <!-- jumbotron -->	

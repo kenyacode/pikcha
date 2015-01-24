@@ -2,10 +2,9 @@
 
 
 <div class="jumbotron">
-	
 	<div class="edit-user">
-		<%= form_for @user do |f| %>
-		
+			<!-- form for edit user -->
+		<%= form_for @user, :html => { :multipart => true } do |f| %>
 			<div>
 				<%= f.label :first_name %>
 				<%= f.text_field :first_name %>
@@ -37,5 +36,5 @@
 				<%= f.submit "Update your profile" %>
 			</div>
 		<% end %>
-	</div> <!-- edit-user -->
+	</div> <!-- edit user -->
 </div> <!-- jumbotron -->	

@@ -7,12 +7,12 @@ class User
   field :password_digest, type: String
 
 	mount_uploader :image, AvatarUploader
-  field :remove_image
 
-validates :first_name, presence: true
-validates :last_name, presence: true
-validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
-validates :password, presence: true, confirmation: true, length: { in: 6..20 }
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+  validates :password, presence: true, confirmation: true, length: { in: 6..20 }
+  validates :password, confirmation: true, length:{in:6..20}, on: :update, allow_blank: true
 
    def password=(unencrypted_password)
     unless unencrypted_password.empty?
@@ -31,5 +31,4 @@ validates :password, presence: true, confirmation: true, length: { in: 6..20 }
    		return false
    	end
    end
-
 end

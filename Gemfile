@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
 
-# Picture gems
+##### CarrierWave Gems #####
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
-# Fog allows to call an image back from Amazon S3
-gem 'fog'
-gem 'mini_magick'		# for post-upload processing
+
+gem 'fog'         # required for Amazon S3
+gem 'mini_magick' # for post-upload image processing
 
 gem 'mongoid', '~> 4.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

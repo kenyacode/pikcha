@@ -1,17 +1,16 @@
-
-<h1>picha</h1>
-<h2>Log In</h2>
-<%= link_to "Sign Up!", new_user_path %>
-<%= form_for :login do |f| %>
-  <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div>
-    <%= f.submit 'Log In' %>
-  </div>
-<% end %>
+<div class="jumbotron">
+  
+  <%= form_for :login do |f| %>
+    <div>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div>
+      <%= f.submit 'Log In' %>
+    </div>
+  <% end %>
+</div>

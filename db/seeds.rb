@@ -7,5 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 users = User.create([
-	{ first_name: 'josh', last_name: 'something', email: 'taco@burritos.com'}
+	{ email: "ndungu@example.com",
+    first_name: "Emmanuel",
+    last_name: "Ndungu",
+    image: "ndu_face.jpg"}
 	])

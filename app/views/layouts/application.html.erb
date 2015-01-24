@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PictureApp</title>
+  <h1>picha</h1>
+  <h2>Share your stories with pictures</h2>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 </head>
 <body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+
+  <header class="navbar  navbar-inverse">
+    <div class="navbar-class">
+      <div class="container">
+        <ul class="nav navbar-nav">
+        
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Sign Up!", new_user_path %></li>
+          <li><%= link_to "Login", login_path %></li>          
+          <li><%= link_to "Logout", logout_path %></li>
+
+        </ul>
+<!-- display inline in css, utilize css positioning (absolute or relative ) -->
+      </div>
+    </div>
+  </header>
           <%= yield %>
 </body>
 </html>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root 'users#new'
   get '/signup' => 'users#new'
+  delete "user/:id" => "user#destroy"
 
   # routes for sessions controller
   get '/login'    => 'sessions#new'
