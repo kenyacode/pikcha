@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
   resources :users
-  resources :albums do
-    resources :photos
-  end
-
+  resources :albums
+  
   root 'users#new'
   get '/signup' => 'users#new'
   delete "user/:id" => "user#destroy"
