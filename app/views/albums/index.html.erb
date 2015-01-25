@@ -1,0 +1,25 @@
+<!-- share navigation -->
+
+
+<div class="jumbotron">
+  <div class="index">
+      <!-- form for rendering all albums -->
+      <% @albums.each do |a| %>
+      <div>
+        <%= a.first_name %> <%= a.last_name %>
+      </div>
+      <div>
+        <%= image_tag a.image.url(:thumb) %>  
+      </div>
+      <div>
+        <%= a.email %>
+      </div>
+      <div>
+        <%= link_to "Edit this album!", edit_album_path(a) %> 
+      </div>  
+      <div>
+        <%= link_to "Delete this album!", album_path(a), method: :delete, data: { confirm: "Are you sure you want to delete this album?"} %>
+      </div>  
+    <% end %>
+  </div> <!-- index album -->
+</div> <!-- jumbotron -->
