@@ -1,0 +1,9 @@
+<div>
+      <p>adding albums</p>
+      <p><%= link_to("Create album", new_album_path) %></p>
+      <% @user.albums.each do |album| %>
+        name: <%= album.name %>
+        <% album.photos.each do |photo| %>
+        <% end %>
+      <% end %>
+    </div>
