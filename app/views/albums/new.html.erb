@@ -1,0 +1,25 @@
+<!-- shared navigation -->
+
+<div class="jumbotron">
+  <div class="newalbum">
+    <h1>CREATE A NEW ALBUM</h1>
+    <%= form_for @album do |f| %>
+      <div>
+        <%= f.label :name%>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="add-photo">
+        <h3>Add Photos</h3>
+        <%= f.fields_for @album.photos do |photo_fields| %>
+          <div>
+            <%= photo_fields.file_field :image, multiple: true %>
+          </div>
+        <% end %>
+      </div>
+      <div>
+        <%= f.submit "Create Your Album" %>
+      </div>
+    <% end %>
+  </div>
+</div>

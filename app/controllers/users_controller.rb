@@ -17,12 +17,16 @@ class UsersController < ApplicationController
 			session[:user_id] = @user.id.to_s
 			redirect_to users_path
 		else
+			flash[:fail] = "Sign in unsucessfull!"
 			render :new
 		end
 	end
 
 	def edit
 		@user = User.find(params[:id])
+
+		foo = 'bar' # Won't be passed to View
+		@another = 1; # @var will be passed into view
 	end
 
 	def destroy
@@ -39,6 +43,7 @@ class UsersController < ApplicationController
 			render "edit"
 		end
 	end
+
 
 	private
 

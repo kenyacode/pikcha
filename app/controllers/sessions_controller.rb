@@ -5,9 +5,10 @@ class SessionsController < ApplicationController
 		user = User.where(email: params[:login][:email]).first
 		if user && user.authenticate(params[:login][:password])
 			session[:user_id] = user.id.to_s
-			redirect_to users_path
+			session[:user_name] = user.first_name + " " + user.last_name
+			redirect_to user
 		else
-			#flash[:fail] = "Your log in failed"
+			flash[:fail] = "Your log in failed"
 			redirect_to login_path
 		end
 	end

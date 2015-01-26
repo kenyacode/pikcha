@@ -1,14 +1,15 @@
 <div class="container-fluid content-body">
 	<div class="row">
 		<div class="form-group col-md-4 col-md-offset-4 text-center">
-			<h2>User<%= u.first_name %> <%= u.last_name %> </h2>
-			<ul>
-				
-					<li> <%= u.first_name %> </li>
-					<li> <%= u.last_name %> </li>
-					<li> <%= u.email %></li>
-				<% end %>
+			<h1>Your Account</h1>
+			<h2> <%= @user.first_name %> <%= @user.last_name %> </h2>
+			<ul>				
+					<li> <%= @user.first_name %> </li>
+					<li> <%= @user.last_name %> </li>
+					<li> <%= @user.email %> </li>
+					<li> <%= image_tag @user.image.url(:thumb) %>	</li>
 			</ul>
 		</div> <!-- form-group -->
 	</div> <!-- row -->
+	<%= render "display_albums" %>
 </div> <!-- container-fluid -->

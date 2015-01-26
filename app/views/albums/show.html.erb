@@ -1,0 +1,15 @@
+<div class="container-fluid content-body">
+  <div class="row">
+    <div class="form-group col-md-4 col-md-offset-4 text-center">
+      <div>
+      <h1><%= @album.name %></h1>
+      </div>
+      <div>
+        <%= @album.desc %>
+      </div>
+        <% @album.photos.each do |photo| %>
+        <%= image_tag photo.image.url(:full) %>
+      <% end %>
+    </div> <!-- form-group -->
+  </div> <!-- row -->
+</div> <!-- container-fluid -->

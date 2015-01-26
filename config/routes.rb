@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   resources :users
-
+  resources :albums
+  resources :photos
+  
   root 'users#new'
   get '/signup' => 'users#new'
   delete "user/:id" => "user#destroy"
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
   get '/login'    => 'sessions#new'
   post '/login'   => 'sessions#create'
   delete '/logout'=> 'sessions#destroy'
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
