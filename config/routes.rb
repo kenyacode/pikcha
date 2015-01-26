@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :albums
+  resources :photos
   
   root 'users#new'
   get '/signup' => 'users#new'

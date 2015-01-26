@@ -14,10 +14,10 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.new(album_params)
-    @album.user = current_user
+    # @album.user = current_user
+    photo_params[:image].each {|p| @album.photos.new(image: p)}
     if @album.save
       redirect_to album_path(@album)
-
     else
       render :new
     end
@@ -28,22 +28,19 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
-    @album = Album.find(params[:id])
-    @album.destroy
-    redirect_to album_path
   end
 
   def update
-    @album = Album.find(params[:id])
-    if @album.update_attributes(album_params)
-      redirect_to albums_path
-    else
-      render "edit"
-    end
+  end
+  def date_published
+    created_at.localtime.strftime("%A, %B %-d, %Y at %l:%M %p")
   end
 
   private
     def album_params
       params.require(:album).permit(:photo, :name, :desc, :date)
+    end
+    def photo_params
+      params.require(:album).require(:photo).permit(:caption, :image => [])
     end
 end
