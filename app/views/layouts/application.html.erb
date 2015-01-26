@@ -16,12 +16,13 @@
     <div class="navbar-class">
       <div class="container">
         <ul class="nav navbar-nav">
-        
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Sign Up!", new_user_path %></li>
-          <li><%= link_to "Login", login_path %></li>          
+          <li><%# link_to "Home", root_path %></li>
+        <% if session.has_key?(:user_id) %>       
           <li><%= link_to "Logout", logout_path, :method => :delete %></li>
-
+        <% else %>
+          <li><%= link_to "Sign Up!", new_user_path %></li>
+          <li><%= link_to "Login", login_path %></li>
+        <% end %>
         </ul>
 <!-- display inline in css, utilize css positioning (absolute or relative ) -->
       </div>
