@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :albums
-  resources :photos
+  resources :photos, except: :index
   
   root 'users#new'
   get '/signup' => 'users#new'
