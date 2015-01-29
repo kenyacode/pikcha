@@ -14,8 +14,11 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.new(album_params)
-    # @album.user = current_user
-    photo_params[:image].each {|p| @album.photos.new(image: p)}
+    @album.user = current_user
+    if !photo_params.nil?
+      photo_params[:image].each {|p| @album.photos.new(image: p)}
+    end
+
     if @album.save
       redirect_to album_path(@album)
     else
@@ -41,6 +44,6 @@ class AlbumsController < ApplicationController
       params.require(:album).permit(:photo, :name, :desc, :date)
     end
     def photo_params
-      params.require(:album).require(:photo).permit(:caption, :image => [])
+      params.require(:album).fetch(:photo, {}).permit(:caption, :image => [])
     end
 end

@@ -2,8 +2,8 @@
 
 <div class="jumbotron">
   <div class="newalbum">
-    <h2>CREATE A NEW ALBUM</h2>
-    <%= form_for @album do |f| %>
+    <h2>Add a new Picture/h2>
+    <%= form_for @photo do |f| %>
 
       <div>
         <%= f.label :name %>
@@ -23,7 +23,7 @@
       </div>
 
       <div>
-        <%= f.submit "Create Your Album" %>
+        <%= f.submit "Upload" %>
       </div>
     <% end %>
   </div>

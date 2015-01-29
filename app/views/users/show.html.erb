@@ -8,8 +8,13 @@
 					<li> <%= @user.last_name %> </li>
 					<li> <%= @user.email %> </li>
 					<li> <%= image_tag @user.image.url(:thumb) %>	</li>
+					<li>  <%= render "display_albums" %> </li>
 			</ul>
 		</div> <!-- form-group -->
+		<div>
+				<%= link_to "Edit your profile!", edit_user_path %> 
+
+				<%= link_to "Delete your profile!", user_path, method: :delete, data: { confirm: "Are you sure you want to delete this profile?"} %>
+		</div>	
 	</div> <!-- row -->
-	<%= render "display_albums" %>
 </div> <!-- container-fluid -->

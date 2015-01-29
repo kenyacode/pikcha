@@ -8,7 +8,7 @@
         <%= @album.desc %>
       </div>
         <% @album.photos.each do |photo| %>
-        <%= image_tag photo.image.url(:full) %>
+        <%= image_tag photo.image.url(:iphone) %>
       <% end %>
     </div> <!-- form-group -->
   </div> <!-- row -->

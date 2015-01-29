@@ -4,16 +4,15 @@
 <div class="jumbotron">
   <div class="index">
       <!-- form for rendering all albums -->
-      <% @albums.each do |a| %>
+      <% current_user.albums.each do |a| %>
       <div>
-        <%= a.first_name %> <%= a.last_name %>
+        <%= link_to album.name %>  
       </div>
-      <div>
-        <%= image_tag a.image.url(:thumb) %>  
-      </div>
-      <div>
-        <%= a.email %>
-      </div>
+      
+        <% if !album.photos.empty? %>
+          <div><%=link_to (image_tag album.photos[0].image.url(:default)), album_path(album) %></div> 
+        <% end %>
+
       <div>
         <%= link_to "Edit this album!", edit_album_path(a) %> 
       </div>  

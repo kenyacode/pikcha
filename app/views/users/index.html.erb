@@ -8,13 +8,18 @@
 				<%= u.first_name %> <%= u.last_name %>
 			</div>
 			<div>
+				<%= link_to "Add a picture!", new_picture_path(u) %>
+			</div>
+			<div>
 				<%= image_tag u.image.url(:thumb) %>	
 			</div>
 			<div>
 				<%= u.email %>
 			</div>
 			<div>
-				<%= link_to "Edit your profile!", edit_user_path(u) %> 
+				
+				<%= link_to "Edit your profile!", edit_user_path(u) %>
+				<%= link_to "Edit your album!", edit_album_path(u) %>
 			</div>	
 			<div>
 				<%= link_to "Delete your profile!", user_path(u), method: :delete, data: { confirm: "Are you sure you want to delete this profile?"} %>
