@@ -15,12 +15,12 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     @album.user = current_user
-    if !photo_params.nil?
-      photo_params[:image].each {|p| @album.photos.new(image: p)}
-    end
+    # if !photo_params.nil?
+    #   photo_params[:image].each {|p| @album.photos.new(image: p)}
+    # end
 
     if @album.save
-      redirect_to album_path(@album)
+      redirect_to photo_path(@album)
     else
       render :new
     end

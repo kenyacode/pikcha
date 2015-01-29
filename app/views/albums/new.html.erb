@@ -2,29 +2,19 @@
 
 <div class="jumbotron">
   <div class="newalbum">
-    <h2>CREATE A NEW ALBUM</h2>
+
+    <h2>Add a new album</h2>
+
     <%= form_for @album do |f| %>
 
-      <div>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-      </div>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
 
-      <div class="add-photo">
-        <h3>Add Photos</h3>
-
-        <%= f.fields_for @album.photos do |photo_fields| %>
-
-          <div>
-            <%= photo_fields.file_field :image, multiple: true %>
-          </div>
-
-        <% end %>
-      </div>
-
-      <div>
-        <%= f.submit "Create Your Album" %>
-      </div>
+    <div>
+      <%= f.submit "Create Your Album" %>
+    </div>
     <% end %>
   </div>
 </div>
