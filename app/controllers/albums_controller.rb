@@ -9,15 +9,17 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
-    @album.photos.build
   end
 
   def create
     @album = Album.new(album_params)
-    # @album.user = current_user
-    photo_params[:image].each {|p| @album.photos.new(image: p)}
+    @album.user = current_user
+    # if !photo_params.nil?
+    #   photo_params[:image].each {|p| @album.photos.new(image: p)}
+    # end
+
     if @album.save
-      redirect_to album_path(@album)
+      redirect_to albums_path
     else
       render :new
     end
@@ -28,6 +30,10 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
+    @album = Album.find(params[:id])
+    @album.destroy
+    redirect_to albums_path
+    
   end
 
   def update
@@ -41,6 +47,6 @@ class AlbumsController < ApplicationController
       params.require(:album).permit(:photo, :name, :desc, :date)
     end
     def photo_params
-      params.require(:album).require(:photo).permit(:caption, :image => [])
+      params.require(:album).fetch(:photo, {}).permit(:caption, :image => [])
     end
 end

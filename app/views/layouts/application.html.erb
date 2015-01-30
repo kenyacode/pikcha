@@ -16,18 +16,20 @@
     <div class="navbar-class">
       <div class="container">
         <ul class="nav navbar-nav">
-          <li><%# link_to "Home", root_path %></li>
+          <!-- if logged in -->
         <% if session.has_key?(:user_id) %> 
           <li><%= session[:user_name] %></li>
           <li><%= link_to "Logout", logout_path, :method => :delete %></li>
+          <li><%= link_to "Albums", albums_path %></li>
+          <!-- if logged out -->
         <% else %>
           <li><%= link_to "Sign Up!", new_user_path %></li>
           <li><%= link_to "Login", login_path %></li>
         <% end %>
         </ul>
-<!-- display inline in css, utilize css positioning (absolute or relative ) -->
       </div>
     </div>
+<!-- display inline in css, utilize css positioning (absolute or relative ) -->
   </header>
           <%= yield %>
 </body>
