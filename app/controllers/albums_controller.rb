@@ -9,7 +9,6 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
-    @album.photos.build
   end
 
   def create
@@ -20,7 +19,7 @@ class AlbumsController < ApplicationController
     # end
 
     if @album.save
-      redirect_to photos_path(@photo)
+      redirect_to albums_path
     else
       render :new
     end
@@ -31,6 +30,10 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
+    @album = Album.find(params[:id])
+    @album.destroy
+    redirect_to albums_path
+    
   end
 
   def update

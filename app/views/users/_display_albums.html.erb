@@ -2,7 +2,7 @@
       <p><%= link_to("Create a new album", new_album_path) %></p>
 
       <% @user.albums.each do |album| %>
-        name: <%= album.name %>
+        <%= link_to album.name %>
         <% album.photos.each do |photo| %>
         <% end %>
       <% end %>
